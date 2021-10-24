@@ -1,0 +1,7 @@
+package msa.clients;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ClientService {
+}

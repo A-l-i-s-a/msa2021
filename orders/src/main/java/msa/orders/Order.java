@@ -1,30 +1,22 @@
 package msa.orders;
 
-import msa.clients.Client;
-
 import javax.persistence.*;
 import java.util.UUID;
 
-
-@Entity
-@Table(name = "order_table")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String name;
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    private UUID clientId;
 
     public Order() {
     }
 
-    public Order(UUID id, String name, Client client) {
-        this.id = id;
+    public Order(String name, UUID clientId) {
         this.name = name;
-        this.client = client;
+        this.clientId = clientId;
     }
 
     public UUID getId() {
@@ -43,11 +35,11 @@ public class Order {
         this.name = name;
     }
 
-    public Client getClient() {
-        return client;
+    public UUID getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(UUID clientId) {
+        this.clientId = clientId;
     }
 }

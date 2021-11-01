@@ -5,8 +5,6 @@ plugins {
 version = "0.0.1-SNAPSHOT"
 
 dependencies {
-    implementation(project(":common"))
-    implementation(project(":orders"))
 
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-jooq")
@@ -41,4 +39,14 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks {
+    withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+        enabled = false
+        mainClass.set("msa.OrderApp")
+    }
+    withType<Jar> {
+        enabled = true
+    }
 }

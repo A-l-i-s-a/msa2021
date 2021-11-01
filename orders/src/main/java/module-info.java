@@ -7,10 +7,12 @@ module msa.orders {
 
     //spring runtime introspection dependencies
     requires spring.context;
-    requires spring.core;
+    requires spring.cloud.gcp.data.datastore;
+    requires spring.web;
+    requires spring.data.commons;
     requires spring.beans;
+    requires google.cloud.core;
 
     requires jdk.unsupported;
-    requires msa.clients;//for netty low-level API access
     requires java.persistence;
 }

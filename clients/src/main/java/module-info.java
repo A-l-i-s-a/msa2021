@@ -12,8 +12,8 @@ module msa.clients {
     requires spring.web;
     requires spring.data.commons;
     requires spring.data.jpa;
+    requires spring.tx;
 
     requires jdk.unsupported;
-    requires msa.orders;
     requires java.persistence;//for netty low-level API access
 }

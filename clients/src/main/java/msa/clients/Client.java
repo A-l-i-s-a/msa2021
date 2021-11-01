@@ -1,9 +1,6 @@
 package msa.clients;
 
-import msa.orders.Order;
-
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -13,15 +10,13 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String name;
-    private List<Order> orders;
 
     public Client() {
     }
 
-    public Client(UUID id, String name, List<Order> orders) {
+    public Client(UUID id, String name) {
         this.id = id;
         this.name = name;
-        this.orders = orders;
     }
 
     public UUID getId() {
@@ -40,11 +35,4 @@ public class Client {
         this.name = name;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 }

@@ -7,9 +7,11 @@ module msa.packages {
 
     //spring runtime introspection dependencies
     requires spring.context;
-    requires spring.core;
+    requires spring.cloud.gcp.data.datastore;
+    requires spring.web;
+    requires spring.data.commons;
     requires spring.beans;
-//    requires spring.cloud.gcp.data.datastore;
+    requires google.cloud.core;
 
     requires jdk.unsupported;
     requires java.persistence;
